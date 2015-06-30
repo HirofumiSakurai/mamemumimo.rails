@@ -1,3 +1,34 @@
 // Place all the styles related to the Texts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#text-entry .editing .display p {
+  color: navy;
+  font-size: 18px;
+}
+#text-entry .edit {
+  display: none;
+}
+#text-entry .editing .edit {
+  display: block;
+}
+#text-entry .append-button{
+  float: right;
+}
+#text-entry .append {
+  display: none;
+}
+#text-entry .appending .append {
+  display: block;
+}
+#text-entry .appending .append-button {
+  display: none;
+}
+#text-entry .insert {
+  display: none;
+}
+#text-entry .inserting .insert {
+  display: block;
+}
+#text-entry .hidden {
+  display: none
+}

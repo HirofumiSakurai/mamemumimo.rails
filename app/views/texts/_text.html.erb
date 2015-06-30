@@ -1,13 +1,30 @@
-<p>
-  <%= text.entity %>
-    <%= form_tag text_path(text.id), method: :patch, html: {class: "form-horizontal"} do %>
-      <div class="form-group hidden">
-        <div class=" col-md-11 col-lg-10">
-          <%= text_area :text, :entity, class: "form-control", row: 1 %>
-        </div>
-        <div class="col-md-1 col-lg-2">
-          <%= submit_tag "追加", class: "btn btn-default" %>
-        </div>
-      </div>
+<li id="<%= text.id %>" class="list-group-item text-item" tabindex=0>
+  <div class="text-show display">
+    <p>
+      <span id="text-entity-<%= text.id %>" class="entity" tabindex=0><%= text.entity %></span>
+      <span class="append-button">
+        <button class="edit" type="button">+</button>
+      </span>
+    </p>
+  </div>
+  <div class="append">
+    <%= form_tag text_path(text.id), method: :patch, remote: true,
+            id: "append-form-#{text.id}", class: "form-group input-group" do %>
+      <%= text_field :text, :entity, class: "form-control" %>
+      <span class="input-group-btn">
+        <%= submit_tag "+", class: "btn btn-default" %>
+      </span>
     <% end %>
-</p> <br />
+  </div>
+  <div class="insert">
+    <%= form_tag text_path(text.id), method: :patch, remote: true,
+            id: "insert-form-#{text.id}", class: "form-group input-group" do %>
+      <%= text_field :text, :entity, class: "form-control inserted-text" %>
+      <%= text_field :text, :method, type: "hidden", id: "insert-method-#{text.id}" %>
+      <%= text_field :text, :position, type: "hidden", id: "insert-position-#{text.id}" %>
+      <span class="input-group-btn">
+        <%= submit_tag "|", class: "btn btn-default" %>
+      </span>
+    <% end %>
+  </div>
+</li>

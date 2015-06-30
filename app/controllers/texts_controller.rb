@@ -30,9 +30,11 @@ class TextsController < ApplicationController
       if @text.save
         format.html { redirect_to @text, notice: 'Text was successfully created.' }
         format.json { render :show, status: :created, location: @text }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @text.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

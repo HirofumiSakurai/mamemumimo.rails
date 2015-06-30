@@ -43,6 +43,6 @@ describe Text, type: :model do
   describe "append_entity" do
     before {text.append_entity("append test")}
 
-    it {expect(text.entity).to eq "test.\nappend test"}
+    it {expect(text.entity).to eq "test.append test"}
   end
 end

@@ -5,6 +5,6 @@ class Text < ActiveRecord::Base
   belongs_to :parent, class_name: "Text"
 
   def append_entity(new_entity)
-    update(entity: entity + "\n" + new_entity)
+    update(entity: entity + new_entity)
   end
 end

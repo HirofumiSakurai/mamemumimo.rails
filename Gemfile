@@ -27,6 +27,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'execjs'
 gem 'twitter-bootstrap-rails'
+gem 'redcarpet'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,4 +50,11 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'turnip'
+  gem 'selenium-webdriver'
+  gem "chromedriver-helper"
+  gem 'poltergeist'
+  gem 'capybara', '~>2.4.4'
+  gem 'capybara-webkit'
+  gem 'launchy'
+  gem 'factory_girl_rails'
 end
